@@ -12,8 +12,8 @@ import (
 	"golang.org/x/net/context"
 
 	// This Service
-	pb "github.com/lelandbatey/truss-languages/gateway/gateway-service"
-	svc "github.com/lelandbatey/truss-languages/gateway/gateway-service/generated"
+	pb "github.com/hasLeland/truss-languages/gateway/gateway-service"
+	svc "github.com/hasLeland/truss-languages/gateway/gateway-service/generated"
 )
 
 var (

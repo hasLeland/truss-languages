@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/net/context"
 
-	pb "github.com/lelandbatey/truss-languages/swedish/swedish-service"
+	pb "github.com/hasLeland/truss-languages/swedish/swedish-service"
 )
 
 // NewService returns a naïve, stateless implementation of Service.

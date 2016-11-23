@@ -1,7 +1,7 @@
 package clienthandler
 
 import (
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
 )
 
 // Translate implements Service.

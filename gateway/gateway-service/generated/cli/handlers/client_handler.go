@@ -1,7 +1,7 @@
 package clienthandler
 
 import (
-	pb "github.com/lelandbatey/truss-languages/gateway/gateway-service"
+	pb "github.com/hasLeland/truss-languages/gateway/gateway-service"
 )
 
 // Translate implements Service.

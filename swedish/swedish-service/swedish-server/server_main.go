@@ -19,9 +19,9 @@ import (
 	"github.com/go-kit/kit/log"
 
 	// This Service
-	pb "github.com/lelandbatey/truss-languages/swedish/swedish-service"
-	svc "github.com/lelandbatey/truss-languages/swedish/swedish-service/generated"
-	handler "github.com/lelandbatey/truss-languages/swedish/swedish-service/handlers/server"
+	pb "github.com/hasLeland/truss-languages/swedish/swedish-service"
+	svc "github.com/hasLeland/truss-languages/swedish/swedish-service/generated"
+	handler "github.com/hasLeland/truss-languages/swedish/swedish-service/handlers/server"
 )
 
 func main() {

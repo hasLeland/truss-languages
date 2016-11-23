@@ -11,8 +11,8 @@ import (
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 
 	// This Service
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
-	svc "github.com/lelandbatey/truss-languages/canadian/canadian-service/generated"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
+	svc "github.com/hasLeland/truss-languages/canadian/canadian-service/generated"
 )
 
 // New returns an service backed by a gRPC client connection. It is the

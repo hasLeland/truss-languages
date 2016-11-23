@@ -21,7 +21,7 @@ import (
 	"github.com/pkg/errors"
 
 	// This service
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
 )
 
 var (

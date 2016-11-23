@@ -13,8 +13,8 @@ function status() {
 }
 
 function start() {
-	nohup swedish-server -http.addr :5051 -grpc.addr :0 -debug.addr :0 >swedish-server.out 2>&1 &
-	nohup canadian-server -http.addr :5052 -grpc.addr :0 -debug.addr :0 >canadian-server.out 2>&1 &
+	nohup swedish-server -http.addr :5051 -grpc.addr :5041 -debug.addr :0 >swedish-server.out 2>&1 &
+	nohup canadian-server -http.addr :5052 -grpc.addr :5042 -debug.addr :0 >canadian-server.out 2>&1 &
 	nohup gateway-server >gateway-server.out 2>&1 &
 }
 

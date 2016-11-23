@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-kit/kit/endpoint"
 
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
 )
 
 // Endpoints collects all of the endpoints that compose an add service. It's

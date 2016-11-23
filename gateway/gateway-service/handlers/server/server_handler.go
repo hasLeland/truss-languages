@@ -3,9 +3,9 @@ package handler
 import (
 	"golang.org/x/net/context"
 
-	pb "github.com/lelandbatey/truss-languages/gateway/gateway-service"
+	pb "github.com/hasLeland/truss-languages/gateway/gateway-service"
 
-	impl "github.com/lelandbatey/truss-languages/gateway/gateway-impl"
+	impl "github.com/hasLeland/truss-languages/gateway/gateway-impl"
 )
 
 // NewService returns a naïve, stateless implementation of Service.

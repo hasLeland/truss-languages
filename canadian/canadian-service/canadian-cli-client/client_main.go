@@ -15,10 +15,10 @@ import (
 	"github.com/pkg/errors"
 
 	// This Service
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
-	clientHandler "github.com/lelandbatey/truss-languages/canadian/canadian-service/generated/cli/handlers"
-	grpcclient "github.com/lelandbatey/truss-languages/canadian/canadian-service/generated/client/grpc"
-	httpclient "github.com/lelandbatey/truss-languages/canadian/canadian-service/generated/client/http"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
+	clientHandler "github.com/hasLeland/truss-languages/canadian/canadian-service/generated/cli/handlers"
+	grpcclient "github.com/hasLeland/truss-languages/canadian/canadian-service/generated/client/grpc"
+	httpclient "github.com/hasLeland/truss-languages/canadian/canadian-service/generated/client/http"
 )
 
 var (

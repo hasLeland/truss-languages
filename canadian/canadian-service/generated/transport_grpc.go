@@ -12,7 +12,7 @@ import (
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 
 	// This Service
-	pb "github.com/lelandbatey/truss-languages/canadian/canadian-service"
+	pb "github.com/hasLeland/truss-languages/canadian/canadian-service"
 )
 
 // MakeGRPCServer makes a set of endpoints available as a gRPC CanadianServer.
