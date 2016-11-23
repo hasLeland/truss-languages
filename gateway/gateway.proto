@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package gateway;
+
+import "google.golang.org/genproto/googleapis/api/serviceconfig/annotations.proto";
+
+service Gateway {
+  // Echo "echos" the incoming string
+  rpc Translate (TranslateRequest) returns (TranslateResponse) {
+    option (google.api.http) = {
+      get: "/echo"
+      body: "*"
+    };
+  }
+}
+
+message TranslateRequest {
+  string Phrase = 1;
+  repeated string Languages = 2;
+}
+
+message TranslateResponse {
+  string Value = 1;
+}

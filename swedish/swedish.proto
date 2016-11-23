@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+// Expose an api to translate english to swedish
+package swedish;
+
+import "google.golang.org/genproto/googleapis/api/serviceconfig/annotations.proto";
+
+service Swedish {
+  rpc Translate (TranslateRequest) returns (TranslateResponse) {
+    option (google.api.http) = {
+      get: "/swedish"
+      body: "*"
+    };
+  }
+}
+
+message TranslateRequest {
+  string Phrase = 1;
+}
+
+message TranslateResponse {
+  string Value = 1;
+}

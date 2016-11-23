@@ -1,0 +1,24 @@
+
+syntax = "proto3";
+
+// Expose an api to translate english to canadian
+package canadian;
+
+import "google.golang.org/genproto/googleapis/api/serviceconfig/annotations.proto";
+
+service Canadian {
+  rpc Translate (TranslateRequest) returns (TranslateResponse) {
+    option (google.api.http) = {
+      get: "/canadian"
+      body: "*"
+    };
+  }
+}
+
+message TranslateRequest {
+  string Phrase = 1;
+}
+
+message TranslateResponse {
+  string Value = 1;
+}
