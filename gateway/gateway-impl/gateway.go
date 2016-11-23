@@ -13,31 +13,36 @@ import (
 	canadianhttp "github.com/lelandbatey/truss-languages/canadian/canadian-service/generated/client/http"
 )
 
-var router = map[string]func(string) svc.TranslateResponse{
+var router = map[string]func(string) string{
 	"swedish":  Swedish,
 	"canadian": Canadian,
 }
 
 // Gateway routes requests to their intended translation service
 func Route(req svc.TranslateRequest) svc.TranslateResponse {
+	rv := svc.TranslateResponse{}
 	if len(req.Languages) < 1 {
 		return svc.TranslateResponse{
 			Value: "Not enough languages passed",
 		}
 
 	}
-	if translatefunc, ok := router[req.Languages[0]]; ok {
-		return translatefunc(req.Phrase)
-	} else {
-		// Default to returning the phrase provided
-		rv := svc.TranslateResponse{
-			Value: fmt.Sprintf("nolangfound: %s\n%s", req.Languages, req.Phrase),
+	rv.Value = req.Phrase
+	for _, lang := range req.Languages {
+		if translatefunc, ok := router[lang]; ok {
+			rv.Value = translatefunc(rv.Value)
+		} else {
+			// Default to returning the phrase provided
+			rv := svc.TranslateResponse{
+				Value: fmt.Sprintf("nolangfound: %s\n%s", req.Languages, req.Phrase),
+			}
+			return rv
 		}
-		return rv
 	}
+	return rv
 }
 
-func Swedish(in string) svc.TranslateResponse {
+func Swedish(in string) string {
 	swedsvc, err := swedishhttp.New(":5051")
 	if err != nil {
 		panic(err)
@@ -46,10 +51,10 @@ func Swedish(in string) svc.TranslateResponse {
 	if err != nil {
 		panic(err)
 	}
-	return svc.TranslateResponse{Value: swed.Value}
+	return swed.Value
 }
 
-func Canadian(in string) svc.TranslateResponse {
+func Canadian(in string) string {
 	canadnsvc, err := canadianhttp.New(":5052")
 	if err != nil {
 		panic(err)
@@ -58,5 +63,5 @@ func Canadian(in string) svc.TranslateResponse {
 	if err != nil {
 		panic(err)
 	}
-	return svc.TranslateResponse{Value: canadn.Value}
+	return canadn.Value
 }

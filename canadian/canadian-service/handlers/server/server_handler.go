@@ -19,6 +19,8 @@ type canadianService struct{}
 func (s canadianService) Translate(ctx context.Context, in *pb.TranslateRequest) (*pb.TranslateResponse, error) {
 	var resp pb.TranslateResponse
 	// A neet trick to translate to canadian
-	resp.Value = strings.Join(strings.Split(in.Phrase, " "), "ay ")
+	for _, word := range strings.Split(in.Phrase, " ") {
+		resp.Value += word + "-ay "
+	}
 	return &resp, nil
 }
