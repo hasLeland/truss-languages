@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mainfiles=$(ag --files-with-matches --go "package main")
+
+for fn in $mainfiles; do
+	mainpkg=${fn%/*.go}
+	name=${mainpkg##*/}
+	echo "$name"
+done
